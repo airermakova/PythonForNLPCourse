@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>Flask app</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="logo">Python from 0 to works with NN</h1>
+        <strong><nav>
+          <ul class="menu">
+            <li><a href="{{ url_for('basic') }}"> Python Basics </a></li>
+            <li><a href="{{ url_for('textproc') }}"> Texts processing </a></li>
+            <li><a href="{{ url_for('nn') }}"> NN training and usage </a></li>
+          </ul>
+        </nav></strong>
+      </div>
+    </header>
+  </body>
+</html>

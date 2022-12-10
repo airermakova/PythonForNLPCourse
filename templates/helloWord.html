@@ -1,0 +1,28 @@
+<html>
+  <head>
+      <div class="container">
+        <h1 class="logo">Python basics</h1>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  </head>
+
+  <body>
+   
+  <div>
+      <h4>Hello word</h4>
+      <form name="basic" enctype=multipart/form-data method="POST">
+        <p class="exp">
+         First python program. We use print operator to stamp "Hello word" on the console.
+        </p>
+         <textarea type="text" id="input" name="helloWord" cols="20" rows="3"> python
+ print("hello world!")
+         </textarea>
+         <input class="copy" type="submit" method="POST" value="copy"/>
+        <br>
+      </form>
+      <a href="http://127.0.0.1:5000/">Back</a> 
+
+  </div>
+
+</body>
+
+</html>
