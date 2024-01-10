@@ -183,15 +183,26 @@ def prepare_model():
 
 
 def prediction_correct(prediction, meaning):
-    if (prediction - meaning) > 0.25:
+    if (prediction - float(meaning)) > 0.25:
         return 0
     return 1
 
 
+# prepare training data
+def prepare_training_set():
+    lines = []
+    with open("test.txt", "r") as f:
+        lines = [
+            [f'The exam is {l.split(":")[0]}', str(l.split(":")[1]).strip()]
+            for l in f.readlines()
+        ]
+    return lines
+
+
 # print examples
-def print_my_examples(inputs, results, meaning):
+def print_my_examples(inputs, results):
     result_for_printing = [
-        f"input: {inputs[i]:<30} : NN score: {results[i][0]:.6f} : word real meaning: {meaning} : neural network correctness: {prediction_correct(results[i][0], meaning)}"
+        f"input: {inputs[i][0]:<30} : NN score: {results[i][0]:.6f} : word real meaning: {inputs[i][1]} : neural network correctness: {prediction_correct(results[i][0], inputs[i][1])}"
         for i in range(len(inputs))
     ]
     correct_result_for_printing = [
@@ -213,13 +224,9 @@ if os.path.exists(bert_model_path) == False:
     prepare_model()
 print("model already exists")
 reloaded_model = tf.saved_model.load(bert_model_path)
-examples = [
-    "The exam is salty",
-    "The responce a clapback",
-    "The lecture is drip.",
-    "This bike is lowkey",
-]
-
-reloaded_results = tf.sigmoid(reloaded_model(tf.constant(examples)))
+examples = prepare_training_set()
+# print(examples)
+phrases = [e[0] for e in examples]
+reloaded_results = tf.sigmoid(reloaded_model(tf.constant(phrases)))
 print("Results from the saved model:")
-print_my_examples(examples, reloaded_results, 0.25)
+print_my_examples(examples, reloaded_results)
