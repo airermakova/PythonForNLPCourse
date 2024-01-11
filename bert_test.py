@@ -193,8 +193,7 @@ def prepare_training_set():
     lines = []
     with open("test.txt", "r") as f:
         lines = [
-            [f'The exam is {l.split(":")[0]}', str(l.split(":")[1]).strip()]
-            for l in f.readlines()
+            [f'{l.split(":")[0]}', str(l.split(":")[1]).strip()] for l in f.readlines()
         ]
     return lines
 
@@ -212,8 +211,10 @@ def print_my_examples(inputs, results):
         i for i in result_for_printing if "neural network correctness: 0" in i
     ]
     with open(model_works_cor, "a") as f:
+        f.write("\n")
         f.write("\n".join(correct_result_for_printing))
     with open(model_works_inc, "a") as f:
+        f.write("\n")
         f.write("\n".join(incorrect_result_for_printing))
     print(incorrect_result_for_printing)
     print(correct_result_for_printing)
