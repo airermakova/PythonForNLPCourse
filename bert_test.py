@@ -201,7 +201,7 @@ def prepare_training_set():
 # print examples
 def print_my_examples(inputs, results):
     result_for_printing = [
-        f"input: {inputs[i][0]:<30} : NN score: {results[i][0]:.6f} : word real meaning: {inputs[i][1]} : neural network correctness: {prediction_correct(results[i][0], inputs[i][1])}"
+        f"{inputs[i][0]:<30} : NN score: {results[i][0]:.6f} : word real meaning: {inputs[i][1]} : neural network correctness: {prediction_correct(results[i][0], inputs[i][1])}"
         for i in range(len(inputs))
     ]
     correct_result_for_printing = [
@@ -217,8 +217,9 @@ def print_my_examples(inputs, results):
         f.write("\n")
         f.write("\n".join(incorrect_result_for_printing))
     print(incorrect_result_for_printing)
-    print(correct_result_for_printing)
-    print()
+    print(len(correct_result_for_printing))
+    print(len(incorrect_result_for_printing))
+    print((len(incorrect_result_for_printing) / len(correct_result_for_printing)) * 100)
 
 
 if os.path.exists(bert_model_path) == False:
