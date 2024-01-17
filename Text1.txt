@@ -1,0 +1,30 @@
+This teacher is closed:0.25
+This teacher is not closed:0.75
+This teacher is mature:0.75
+This teacher is not mature:0.25
+This dog is dangerous:0.25
+This dog is not dangerous:0.75
+This expression is exaggerated:0.25
+This expression is not exaggerated:0.75
+Those consequences are fatal:0.25
+Those consequences are not fatal:0.75
+This performance is imperfect:0.25
+This performance is not imperfect:0.75
+This fall is injurious:0.25
+This fall is not injurious:0.75
+This mood is mournful:0.25
+This mood is not mournful:0.75
+This teacher is negative:0.25
+This teacher is not negative:0.75
+This exam is overwhelming:0.25
+This exam is not overwhelming:0.75
+This exam is tremendous:0.25
+This exam is not tremendous:0.75
+This exam is uneasy:0.25
+This exam is not uneasy:0.75
+This path is unmistakable:0.75
+This path is not unmistakable:0.25
+This athlete is weak:0.25
+This athlete is not weak:0.75
+This teacher is weird:0.25
+This teacher is not weird:0.75
